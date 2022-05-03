@@ -22,6 +22,9 @@
 
 // The main function is required, and the program begins executing from here.
 
+#define pressed 0
+#define not_pressed 1
+
 int main(void)
 {
     // Configure oscillator and I/O ports. These functions run once at start-up.
@@ -52,6 +55,7 @@ int main(void)
             __delay_ms(100);
         }
 
+/*
         if(SW3 == 0)
         {
             LED3 = 1;
@@ -61,8 +65,16 @@ int main(void)
             LED6 = 0;
             __delay_ms(200);
         }
-
+*/
         // Add code for your Program Analysis and Programming Activities here:
+
+        if(SW3 == pressed)
+        {
+            LATC = 0b00000000;
+            __delay_ms(100);
+            LATC = 0b11110000;
+            __delay_ms(100);
+        }
 
         // Activate bootloader if SW1 is pressed.
         if(SW1 == 0)
