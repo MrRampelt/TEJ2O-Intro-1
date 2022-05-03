@@ -59,6 +59,7 @@ int main(void)
             __delay_ms(200);
             LED3 = 0;
             LED6 = 0;
+            __delay_ms(200);
         }
 
         // Add code for your Program Analysis and Programming Activities here:
